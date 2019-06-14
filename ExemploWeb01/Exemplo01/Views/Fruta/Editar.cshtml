@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+</head>
+<body>
+    <form action="/fruta/update" method="post">
+
+        <label for="campo-nome">Nome</label>
+        <input type="text" name="nome" id="campo-nome"
+               value="@ViewBag.Fruta.Nome" />
+        <label for="campo-preco">Preco</label>
+        <input type="number" name="preco" id="campo-preco"
+               value="@ViewBag.Fruta.Preco" />
+
+        <input type="hidden" name="id" value="@ViewBag.Fruta.Id" />
+        <button type="submit">Salvar</button>
+
+    </form>
+</body>
+</html>

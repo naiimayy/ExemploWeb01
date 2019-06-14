@@ -1,0 +1,10 @@
+﻿.tabela {
+    width: 100%;
+    background-color: dodgerblue;
+    color: black;
+}
+
+th {
+    height:30px;
+    padding-left:10px;
+}

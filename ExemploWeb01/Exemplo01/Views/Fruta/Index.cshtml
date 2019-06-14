@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Content/FrutaIndex.css" />
+</head>
+<body>
+    <div>
+        <h1>Lista de Frutas</h1>
+        <h3>@ViewBag.Texto</h3>
+    </div>
+    <a href="/fruta/cadastro">Nova fruta</a>
+    <form action="/fruta/index" method="get">
+        <label for="=campo-pesquisa">Pesquisa</label>
+        <input type="text" id="campo-pesquisa" name="pesquisa" />
+
+    </form>
+    <div>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < ViewBag.Frutas.Count; i++)
+                {
+                    <tr>
+                        <td>@ViewBag.Frutas[i].Id</td>
+                        <td>@ViewBag.Frutas[i].Nome</td>
+                        <td>@ViewBag.frutas[i].Preco</td>
+                        <td>
+                            <a href="/fruta/apagar?id=@ViewBag.Frutas[i].Id">Apagar</a>
+                            <a href="/fruta/editar?id=@ViewBag.Frutas[i].Id">Editar</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
